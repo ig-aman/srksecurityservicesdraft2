@@ -1,0 +1,259 @@
+.home-section {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,189,32,.12),
+            transparent 28%
+        ),
+        radial-gradient(
+            ellipse at bottom,
+            #0d1b39,
+            transparent 65%
+        ),
+        var(--black);
+}
+
+.home-glow {
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,189,32,.1),
+            transparent 65%
+        );
+
+    filter: blur(20px);
+
+    animation:
+        homeGlow
+        5s
+        ease-in-out
+        infinite;
+}
+
+.home-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(950px,90%);
+
+    padding-top: 80px;
+}
+
+.home-logo {
+    position: relative;
+
+    width: 380px;
+    height: 395px;
+
+    margin:
+        0
+        auto
+        0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    animation:
+        logoFloat
+        5s
+        ease-in-out
+        infinite;
+}
+
+.home-logo img {
+    position: relative;
+
+    z-index: 2;
+
+    width: 350px;
+    height: 370px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 30px 45px rgba(0,0,0,.7)
+        )
+        drop-shadow(
+            0 0 50px rgba(255,189,32,.3)
+        );
+}
+
+.logo-glow {
+    position: absolute;
+
+    width: 370px;
+    height: 370px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,189,32,.28),
+            transparent 65%
+        );
+
+    filter: blur(15px);
+}
+
+.home-section h1 {
+    font-size:
+        clamp(50px,7vw,92px);
+
+    line-height: .96;
+
+    letter-spacing: -.065em;
+
+    font-weight: 900;
+}
+
+.home-section h1 span {
+    color: var(--gold);
+}
+
+.home-section p {
+    max-width: 680px;
+
+    margin:
+        28px
+        auto;
+
+    color: var(--muted);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+.home-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.scroll-indicator {
+    display: block;
+
+    width: 27px;
+    height: 44px;
+
+    margin:
+        45px
+        auto
+        0;
+
+    border:
+        2px solid rgba(255,255,255,.75);
+
+    border-radius: 30px;
+
+    padding-top: 7px;
+}
+
+.scroll-indicator span {
+    display: block;
+
+    width: 4px;
+    height: 8px;
+
+    margin: auto;
+
+    border-radius: 5px;
+
+    background: var(--gold);
+
+    animation:
+        scrollDot
+        1s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+@keyframes logoFloat {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+}
+
+@keyframes homeGlow {
+
+    0%,100% {
+        transform: scale(.9);
+        opacity: .5;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+}
+
+@keyframes scrollDot {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(16px);
+    }
+
+}
+
+
+@media(max-width:600px) {
+
+    .home-logo {
+        width: 300px;
+        height: 320px;
+    }
+
+    .home-logo img {
+        width: 275px;
+        height: 295px;
+    }
+
+    .logo-glow {
+        width: 290px;
+        height: 290px;
+    }
+
+    .home-buttons {
+        flex-direction: column;
+        width: 280px;
+        margin: auto;
+    }
+}

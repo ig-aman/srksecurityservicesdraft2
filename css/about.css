@@ -1,0 +1,197 @@
+.about-section {
+    min-height: 800px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    align-items: center;
+
+    gap: 90px;
+
+    padding:
+        130px 7vw;
+
+    background:
+        linear-gradient(
+            180deg,
+            #091126,
+            #101a30
+        );
+}
+
+.about-visual {
+    position: relative;
+
+    height: 520px;
+
+    display: grid;
+
+    place-items: center;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,189,32,.12),
+            transparent 35%
+        ),
+        #080d19;
+}
+
+.about-visual img {
+    position: relative;
+
+    z-index: 2;
+
+    width: 235px;
+
+    filter:
+        drop-shadow(
+            0 25px 35px rgba(0,0,0,.6)
+        );
+
+    animation:
+        aboutFloat
+        5s
+        ease-in-out
+        infinite;
+}
+
+.about-orbit {
+    position: absolute;
+
+    border:
+        1px solid
+        rgba(255,189,32,.18);
+
+    border-radius: 50%;
+}
+
+.orbit-one {
+    width: 440px;
+    height: 440px;
+
+    transform:
+        rotate(30deg)
+        skewX(-15deg);
+}
+
+.orbit-two {
+    width: 300px;
+    height: 300px;
+
+    transform:
+        rotate(-20deg)
+        skewX(10deg);
+}
+
+.about-content h2 {
+    font-size:
+        clamp(45px,5.5vw,75px);
+
+    line-height: .98;
+
+    letter-spacing: -.055em;
+}
+
+.about-content h2 span {
+    color: var(--gold);
+}
+
+.about-content p {
+    max-width: 620px;
+
+    margin-top: 24px;
+
+    color: var(--muted);
+
+    line-height: 1.8;
+}
+
+.text-button {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    color: var(--gold);
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: .12em;
+}
+
+.stats-section {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    background: #0b1325;
+}
+
+.stat {
+    padding: 55px 20px;
+
+    text-align: center;
+
+    border-right:
+        1px solid rgba(255,255,255,.06);
+}
+
+.stat strong {
+    display: block;
+
+    color: var(--gold);
+
+    font-size: 42px;
+
+    font-weight: 900;
+}
+
+.stat span {
+    display: block;
+
+    margin-top: 8px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+@keyframes aboutFloat {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-14px);
+    }
+
+}
+
+
+@media(max-width:850px) {
+
+    .about-section {
+        grid-template-columns: 1fr;
+
+        padding-top: 100px;
+    }
+
+    .about-visual {
+        height: 420px;
+    }
+
+    .stats-section {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
